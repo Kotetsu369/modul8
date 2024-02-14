@@ -62,14 +62,14 @@ class Student_course(Model):
 # Student_course.insert_many(student_courses).execute()
 
 
-for Student in Student.select().where(Student.age > 30):
-    print(Student.name)
+for Student1 in Student.select().where(Student.age > 30):
+    print(Student1.name)
 print('\n')
 
 # Всех студентов, которые проходят курс по python.
 python = Student.select().join(Student_course).join(Course).where(Course.name == 'python')
-for student in python:
-    print(student.name)
+for student2 in python:
+    print(student2.name)
 print('\n')
 
 # Всех студентов, которые проходят курс по python и из Spb.
